@@ -9,6 +9,4 @@ jobs:
     steps:
       - run: echo "COMMAND 0 EXECUTED"
       - run: echo "COMMAND 1 EXECUTED"
-      - run: gh issue comment "$NUMBER" --body "Thanks"
-    env:
-      NUMBER: ${{ github.event.issue.number }}
+      
