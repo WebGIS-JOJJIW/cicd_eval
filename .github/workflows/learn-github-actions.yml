@@ -5,7 +5,7 @@ jobs:
   pr_commented:
     name: pr_comment
     # if: ${{ github.event.issue.pull_request }}
-    if: ${{ github.event.comment.body }} == "test"
+    if: ${{ github.event.comment.body == "test" }}
     runs-on: ubuntu-latest
     steps:
       - run: echo "COMMAND 0 EXECUTED"
