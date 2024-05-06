@@ -23,8 +23,11 @@ jobs:
       - checkout
       # Replace this with a real test runner invocation
       - run:
-          name: Run tests
-          command: echo 'replace me with real tests!' && false
+          name: Install Python libraries
+          command: pip3 install -r requirement.txt
+      - run:
+          name: Run test
+          command: pytest test_app.py
   build:
     docker:
       - image: cimg/base:current
