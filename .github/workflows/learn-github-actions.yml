@@ -9,10 +9,6 @@ jobs:
     steps:
       - run: echo "COMMAND 0 EXECUTED"
       - run: echo "COMMAND 1 EXECUTED"
-      - run: gh issue comment "$NUMBER" --body "$BODY"
+      - run: gh issue comment "$NUMBER" --body "Thanks"
     env:
       NUMBER: ${{ github.event.issue.number }}
-      BODY: >
-        This issue is available for anyone to work on.
-        **Make sure to reference this issue in your pull request.**
-        :sparkles: Thank you for your contribution! :sparkles:
