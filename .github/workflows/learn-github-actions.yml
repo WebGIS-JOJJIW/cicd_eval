@@ -5,9 +5,8 @@ jobs:
   pr_commented:
     name: pr_comment
     if: ${{ github.event.issue.pull_request }}
-    example_workflow:
-      runs-on: ubuntu-latest
-      steps:
-        - run: echo "COMMAND 0 EXECUTED"
-        - run: echo "COMMAND 1 EXECUTED"
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "COMMAND 0 EXECUTED"
+      - run: echo "COMMAND 1 EXECUTED"
       
