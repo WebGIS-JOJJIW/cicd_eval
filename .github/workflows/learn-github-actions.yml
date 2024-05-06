@@ -2,8 +2,19 @@ name: learn-github-actions
 run-name: ${{ github.actor }} is learning GitHub Actions
 on: issue_comment
 jobs:
+  name: PR comment
+  if: ${{ github.event.issue.pull_request }}
   example_workflow:
     runs-on: ubuntu-latest
     steps:
       - run: echo "COMMAND 0 EXECUTED"
       - run: echo "COMMAND 1 EXECUTED"
+      - run: gh issue comment "$NUMBER" --body "$BODY"
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GH_REPO: ${{ github.repository }}
+      NUMBER: ${{ github.event.issue.number }}
+      BODY: >
+        This issue is available for anyone to work on.
+        **Make sure to reference this issue in your pull request.**
+        :sparkles: Thank you for your contribution! :sparkles:
