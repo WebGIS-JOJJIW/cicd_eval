@@ -9,3 +9,4 @@ def test_addition():
 def test_subtraction():
     assert 50 == subtraction(500, 450)
     assert 300 == subtraction(821, 521)
+    assert False
